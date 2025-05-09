@@ -1,0 +1,19 @@
+{
+  "name": "prisma_db_viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prisma:studio:date10auth": "npx prisma studio --schema ./prisma/date10-auth/schema.prisma",
+    "prisma:dbpull:date10auth": "npx prisma db pull --schema ./prisma/date10-auth/schema.prisma",
+    "prisma:generate:date10auth": "npx prisma generate --schema ./prisma/date10-auth/schema.prisma"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "prisma": "^6.7.0"
+  }
+}
