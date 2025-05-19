@@ -7,8 +7,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --omit=dev
 
-COPY prisma ./prisma/
-RUN npm install prisma && npx prisma generate
+RUN npm install prisma
 
 FROM node:22-alpine
 
@@ -18,4 +17,5 @@ COPY --from=builder /app /app
 
 EXPOSE 5555
 
-CMD [ "sh", "-c", "npx prisma db pull && npx prisma studio" ]
+CMD [ "sh", "-c", "npm run generate:schema && npx prisma db pull && npx prisma studio" ]
+
